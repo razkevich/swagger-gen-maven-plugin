@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>swagger-gen-plugin-test</artifactId>
+    <version>${app.version}</version>
+
+    <description>
+        1. Swagger gen plugin unit tests based on sample JAX-RS API
+        2. Swagger gen plugin usage example
+    </description>
+
+    <parent>
+        <artifactId>swagger-gen-plugin-parent</artifactId>
+        <groupId>ru.sbrf.efs.swaggergen</groupId>
+        <version>1.0</version>
+    </parent>
+
+    <dependencies>
+        <!--Swagger-gen-->
+        <dependency>
+            <groupId>ru.sbrf.efs.swaggergen</groupId>
+            <artifactId>swagger-gen-plugin</artifactId>
+        </dependency>
+        <!--Swagger-->
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-core</artifactId>
+        </dependency>
+        <!--Java EE API-->
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+        </dependency>
+        <!--Test-->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!--Swagger gen plugin usage example-->
+            <!--BEGIN ******************** -->
+            <plugin>
+                <groupId>ru.sbrf.efs.swaggergen</groupId>
+                <artifactId>swagger-gen-plugin</artifactId>
+                <version>${app.version}</version>
+                <configuration>
+                    <!--The stuff below goes to .yaml's header-->
+                    <title>Swagger title</title>
+                    <version>${app.version}</version>
+                    <description>API description</description>
+                    <termsOfService>http://www.sberbank.ru</termsOfService>
+                    <contactEmail>sberbank@sberbank.com</contactEmail>
+                    <contactName>sberbank</contactName>
+                    <contactUrl>http://www.sberbank.ru</contactUrl>
+                    <licenseUrl>http://www.sberbank.ru</licenseUrl>
+                    <licenseName>apache 2.0</licenseName>
+                    <basePath>/swagger</basePath>
+                    <host>localhost</host>
+                    <swaggerDirectory>target</swaggerDirectory>
+                    <swaggerFileName>swagger</swaggerFileName>
+                    <!--Path to target java services, API's entry point itself-->
+                    <packagesToScan>
+                        <param>ru.sbrf.bellazy.testapi.services</param>
+                    </packagesToScan>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generateSwagger</goal>
+                        </goals>
+                        <phase>process-classes</phase>
+                    </execution>
+                </executions>
+            </plugin>
+            <!--END ******************** -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <encoding>${source.encoding}</encoding>
+                    <source>${source.java.version}</source>
+                    <target>${target.java.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

@@ -1,0 +1,80 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>ru.sbrf.efs.swaggergen</groupId>
+    <artifactId>swagger-gen-plugin-parent</artifactId>
+    <version>1.0</version>
+    <packaging>pom</packaging>
+
+    <description>Bellazy API example</description>
+
+    <modules>
+        <module>swagger-gen-plugin</module>
+        <module>swagger-gen-plugin-test</module>
+    </modules>
+
+    <properties>
+        <app.version>1.0-SNAPSHOT</app.version>
+        <!--Swagger-->
+        <swagger-core.version>1.5.12</swagger-core.version>
+        <!--Java EE API-->
+        <javaee-api.version>7.0</javaee-api.version>
+        <!--Maven-->
+        <source.encoding>UTF-8</source.encoding>
+        <source.java.version>1.8</source.java.version>
+        <target.java.version>1.8</target.java.version>
+        <maven-compiler-plugin.version>3.6.1</maven-compiler-plugin.version>
+        <maven-plugin.version>3.5.0</maven-plugin.version>
+        <maven-plugin-plugin.version>3.5</maven-plugin-plugin.version>
+        <!--Test-->
+        <junit.version>4.12</junit.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!--Swagger-gen-->
+            <dependency>
+                <groupId>ru.sbrf.efs.swaggergen</groupId>
+                <artifactId>swagger-gen-plugin</artifactId>
+                <version>${app.version}</version>
+            </dependency>
+            <!--Swagger-->
+            <dependency>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-core</artifactId>
+                <version>${swagger-core.version}</version>
+            </dependency>
+            <!--Java EE API-->
+            <dependency>
+                <groupId>javax</groupId>
+                <artifactId>javaee-api</artifactId>
+                <version>${javaee-api.version}</version>
+            </dependency>
+            <!--Maven-->
+            <dependency>
+                <groupId>org.apache.maven</groupId>
+                <artifactId>maven-plugin-api</artifactId>
+                <version>${maven-plugin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.maven</groupId>
+                <artifactId>maven-core</artifactId>
+                <version>${maven-plugin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.maven.plugin-tools</groupId>
+                <artifactId>maven-plugin-annotations</artifactId>
+                <version>${maven-plugin-plugin.version}</version>
+            </dependency>
+            <!--Test-->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
