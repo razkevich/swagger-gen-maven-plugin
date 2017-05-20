@@ -12,7 +12,7 @@
 
     <parent>
         <artifactId>swagger-gen-plugin-parent</artifactId>
-        <groupId>ru.sbrf.efs.swaggergen</groupId>
+        <groupId>org.razkevich.swaggergen</groupId>
         <version>1.0</version>
     </parent>
 

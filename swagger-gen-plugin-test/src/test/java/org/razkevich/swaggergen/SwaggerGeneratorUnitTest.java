@@ -3,8 +3,8 @@ package org.razkevich.swaggergen;
 import io.swagger.models.*;
 import org.junit.Assert;
 import org.junit.Test;
-import ru.sbrf.bellazy.testapi.services.JaxRsService1;
-import ru.sbrf.bellazy.testapi.valueobjects.RequestVO1;
+import org.razkevich.testapi.services.JaxRsService1;
+import org.razkevich.testapi.valueobjects.RequestVO1;
 
 import java.lang.reflect.Method;
 import java.util.Arrays;
@@ -35,7 +35,7 @@ public class SwaggerGeneratorUnitTest {
 
 	@Test
 	public void testGenerateSwagger() {
-		Swagger swagger = SwaggerGeneratorService.generateSwagger(Collections.singletonList("ru.sbrf.bellazy.testapi.services"), "/jaxrs-service1", "localhost",
+		Swagger swagger = SwaggerGeneratorService.generateSwagger(Collections.singletonList("org.razkevich.testapi.services"), "/jaxrs-service1", "localhost",
 				new Info().title("title").version("version").description("description").termsOfService("termsOfService")
 						.contact(new Contact().email("contactEmail").name("contactName").url("contactUrl"))
 						.license(new License().url("licenseUrl").name("licenseName")), SCHEMES);

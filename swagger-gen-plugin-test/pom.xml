@@ -14,14 +14,14 @@
 
     <parent>
         <artifactId>swagger-gen-plugin-parent</artifactId>
-        <groupId>ru.sbrf.efs.swaggergen</groupId>
+        <groupId>org.razkevich.swaggergen</groupId>
         <version>1.0</version>
     </parent>
 
     <dependencies>
         <!--Swagger-gen-->
         <dependency>
-            <groupId>ru.sbrf.efs.swaggergen</groupId>
+            <groupId>org.razkevich.swaggergen</groupId>
             <artifactId>swagger-gen-plugin</artifactId>
         </dependency>
         <!--Swagger-->
@@ -47,7 +47,7 @@
             <!--Swagger gen plugin usage example-->
             <!--BEGIN ******************** -->
             <plugin>
-                <groupId>ru.sbrf.efs.swaggergen</groupId>
+                <groupId>org.razkevich.swaggergen</groupId>
                 <artifactId>swagger-gen-plugin</artifactId>
                 <version>${app.version}</version>
                 <configuration>
@@ -55,11 +55,11 @@
                     <title>Swagger title</title>
                     <version>${app.version}</version>
                     <description>API description</description>
-                    <termsOfService>http://www.sberbank.ru</termsOfService>
-                    <contactEmail>sberbank@sberbank.com</contactEmail>
-                    <contactName>sberbank</contactName>
-                    <contactUrl>http://www.sberbank.ru</contactUrl>
-                    <licenseUrl>http://www.sberbank.ru</licenseUrl>
+                    <termsOfService>http://www.yandex.ru</termsOfService>
+                    <contactEmail>yandex@yandex.com</contactEmail>
+                    <contactName>yandex</contactName>
+                    <contactUrl>http://www.yandex.ru</contactUrl>
+                    <licenseUrl>http://www.yandex.ru</licenseUrl>
                     <licenseName>apache 2.0</licenseName>
                     <basePath>/swagger</basePath>
                     <host>localhost</host>
@@ -67,7 +67,7 @@
                     <swaggerFileName>swagger</swaggerFileName>
                     <!--Path to target java services, API's entry point itself-->
                     <packagesToScan>
-                        <param>ru.sbrf.bellazy.testapi.services</param>
+                        <param>org.razkevich.testapi.services</param>
                     </packagesToScan>
                 </configuration>
                 <executions>

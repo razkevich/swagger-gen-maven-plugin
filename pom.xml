@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>ru.sbrf.efs.swaggergen</groupId>
+    <groupId>org.razkevich.swaggergen</groupId>
     <artifactId>swagger-gen-plugin-parent</artifactId>
     <version>1.0</version>
     <packaging>pom</packaging>
@@ -36,7 +36,7 @@
         <dependencies>
             <!--Swagger-gen-->
             <dependency>
-                <groupId>ru.sbrf.efs.swaggergen</groupId>
+                <groupId>org.razkevich.swaggergen</groupId>
                 <artifactId>swagger-gen-plugin</artifactId>
                 <version>${app.version}</version>
             </dependency>
